@@ -7,6 +7,21 @@ document.addEventListener("mousemove", function (dets) {
     blur.style.top = dets.y - 150 + "px"
 
 })
+var h4all = document.querySelectorAll("#nav h4")
+
+
+h4all.forEach(function (elem) {
+    elem.addEventListener("mouseenter", function () {
+        crsr.style.scale = 2
+        crsr.style.backgroundColor = "transparent"
+        crsr.style.border = "1px solid #fff"
+    })
+    elem.addEventListener("mouseleave", function () {
+        crsr.style.scale = 1
+        crsr.style.backgroundColor = "#95C11E"
+        crsr.style.border = "none"
+    })
+})
 
 gsap.to("#nav", {
     backgroundColor: "black",
@@ -33,4 +48,35 @@ gsap.to("#main", {
         scrub: 2
 
     }
+})
+
+gsap.from("#about-us img,#about-us-in", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.4,
+    scrollTrigger: {
+        trigger: "#about-us",
+        scroller: "body",
+        // markers: true,
+        start: "top 50%",
+        end: "top 58%",
+        scrub: 2,
+    }
+
+})
+gsap.from(".card", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    // stagger: 0.4,
+    scrollTrigger: {
+        trigger: ".card",
+        scroller: "body",
+        // markers: true,
+        start: "top 50%",
+        end: "top 58%",
+        scrub: 2,
+    }
+
 })
