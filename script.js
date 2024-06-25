@@ -54,7 +54,7 @@ gsap.from("#about-us img,#about-us-in", {
     y: 50,
     opacity: 0,
     duration: 1,
-    stagger: 0.4,
+    stagger: 0.2,
     scrollTrigger: {
         trigger: "#about-us",
         scroller: "body",
@@ -69,14 +69,36 @@ gsap.from(".card", {
     y: 50,
     opacity: 0,
     duration: 1,
-    // stagger: 0.4,
+    stagger: 0.1,
     scrollTrigger: {
         trigger: ".card",
         scroller: "body",
         // markers: true,
-        start: "top 50%",
-        end: "top 58%",
+        start: "top 60%",
+        end: "top 70%",
         scrub: 2,
     }
 
+})
+gsap.from("#colon1", {
+    y: -70,
+    x: -70,
+    scrollTrigger: {
+        trigger: "#colon1",
+        scroller: "body",
+        start: "top 50%",
+        end: "top 58%",
+        scrub: 4,
+    }
+})
+gsap.from("#colon2", {
+    y: 70,
+    x: 70,
+    scrollTrigger: {
+        trigger: "#colon2",
+        scroller: "body",
+        start: "top 0%",
+        end: "top 58%",
+        scrub: 4,
+    }
 })
