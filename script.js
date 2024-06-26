@@ -8,9 +8,21 @@ document.addEventListener("mousemove", function (dets) {
 
 })
 var h4all = document.querySelectorAll("#nav h4")
-
+var h2all = document.querySelectorAll("#pageFour h2")
 
 h4all.forEach(function (elem) {
+    elem.addEventListener("mouseenter", function () {
+        crsr.style.scale = 2
+        crsr.style.backgroundColor = "transparent"
+        crsr.style.border = "1px solid #fff"
+    })
+    elem.addEventListener("mouseleave", function () {
+        crsr.style.scale = 1
+        crsr.style.backgroundColor = "#95C11E"
+        crsr.style.border = "none"
+    })
+})
+h2all.forEach(function (elem) {
     elem.addEventListener("mouseenter", function () {
         crsr.style.scale = 2
         crsr.style.backgroundColor = "transparent"
@@ -95,10 +107,24 @@ gsap.from("#colon2", {
     y: 70,
     x: 70,
     scrollTrigger: {
-        trigger: "#colon2",
+        trigger: "#colon1",
         scroller: "body",
-        start: "top 0%",
-        end: "top 58%",
+        // markers:true,
+        start: "top 55%",
+        end: "top 45%",
+        scrub: 4,
+    },
+});
+
+gsap.from("#pageFour h1", {
+    y: 50,
+    scrollTrigger: {
+        trigger: "#pageFour h1",
+        scroller: "body",
+        // markers:true,
+        start: "top 85%",
+        end: "top 85%",
         scrub: 4,
     }
+
 })
